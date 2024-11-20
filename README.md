@@ -11,6 +11,6 @@ This project simulates the evaporation and dynamics of an n-Decane droplet in a 
 ## Installation
 
 ```bash
-git clone https://github.com/yourusername/DropletEvaporationSimulation.git
+git clone https://github.com/guillaume-bailly/DropletEvaporationSimulation.git
 cd DropletEvaporationSimulation
 pip install -r requirements.txt
