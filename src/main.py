@@ -5,9 +5,9 @@ This script initializes the simulation parameters, computes the evaporation
 models, and generates plots for droplet properties over time.
 """
 
-from src.constants import TIME_ARRAY, DO, TF, TA
-from src.simulation import DropletEvaporationModel
-from src.plots import plot_velocity, plot_diameter_squared
+from constants import TIME_ARRAY, DO, TF, TA
+from simulation import DropletEvaporationModel
+from plots import plot_velocity, plot_diameter_squared
 import numpy as np
 
 

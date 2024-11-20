@@ -1,7 +1,7 @@
 # src/simulation.py
 
-from src.constants import *
-from src.utils import interpolate_ode
+from constants import *
+from utils import interpolate_ode
 from scipy.integrate import cumtrapz, solve_ivp
 import numpy as np
 
