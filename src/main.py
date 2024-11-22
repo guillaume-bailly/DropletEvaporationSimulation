@@ -7,7 +7,7 @@ models, and generates plots for droplet properties over time.
 
 from constants import TIME_ARRAY, DO, TF, TA
 from simulation import DropletEvaporationModel
-from plots import plot_velocity, plot_diameter_squared
+from plots import plot_velocity, plot_diameter_squared, plot_droplet_temperature
 import numpy as np
 
 
@@ -38,6 +38,10 @@ def main():
     # Plot the D² evolution for both models
     plot_diameter_squared(TIME_ARRAY, normalized_d2_law, "D² Evolution (D² Law)")
     plot_diameter_squared(TIME_ARRAY, normalized_inf_conductivity, "D² Evolution (Infinite Liquid Conductivity)")
+
+    #Compute and plot droplet temperature evolution
+    droplet_temperature = model.calculate_droplet_temperature(TIME_ARRAY,Bm2,diameter_squared_inf_conductivity)
+    plot_droplet_temperature(droplet_temperature)
 
     # Additional outputs like droplet temperature or axial velocity can be computed here.
     # Example: Integrating the temperature model.

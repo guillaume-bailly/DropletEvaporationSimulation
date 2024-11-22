@@ -18,3 +18,12 @@ def plot_diameter_squared(time, diameter_squared, title):
     plt.ylabel('(D/Do)^2')
     plt.title(title)
     plt.show()
+
+def plot_droplet_temperature(droplet_temperature):
+    plt.figure()
+    plt.plot(droplet_temperature.t, droplet_temperature.y[0])
+    plt.xlabel('time (s)')
+    plt.ylabel('Tp (K)')
+    plt.title('Evolution of droplet temperature over time (Infinite liquid conductivity model)')
+    plt.axis([0, 0.5, 300, 450])
+    plt.show()
