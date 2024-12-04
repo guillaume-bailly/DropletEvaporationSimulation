@@ -2,7 +2,7 @@
 
 from constants import *
 from utils import interpolate_ode
-from scipy.integrate import cumtrapz, solve_ivp, odeint
+from scipy.integrate import cumtrapz, solve_ivp
 import numpy as np
 
 class DropletEvaporationModel:
@@ -39,3 +39,22 @@ class DropletEvaporationModel:
         Tp0 = [TF]  #initial condition
         Tp = solve_ivp(interpolate_ode, tspan, Tp0, args=(ta, f, g))
         return Tp
+    
+    def calculate_droplet_velocity(self, ta, Dsquare):
+        """Calculate droplet velocity over time using the chosen Dsquare."""
+        # Aerodynamics of droplet
+        h1 = (18 * MU_A) / (Dsquare * RHO_F)
+        k1 = (18 * MU_A) / (Dsquare * RHO_F) * self.ug
+        tspan = [0, 4]   #defining time interval
+        Up0 = [0]  #initial condition
+        Up = solve_ivp(interpolate_ode, tspan, Up0, t_eval=ta[:1000], args=(ta, h1, k1))
+        #print(len(Up.t)," ",len(Up.y[0]))
+        time = Up.t[:400]
+        velocity = Up.y[0][:400]
+        return time, velocity
+    
+    def calculate_droplet_position(self, time,velocity):
+        """Calculate droplet velocity over time using the chosen Velocity."""
+        # Solving axial position Xp of droplet
+        Xp = cumtrapz(velocity, time, initial=0)
+        return Xp

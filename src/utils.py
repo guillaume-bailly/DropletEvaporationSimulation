@@ -8,9 +8,3 @@ def interpolate_ode(t, y, ta, f, g):
     f_interp = np.interp(t, ta, f)
     g_interp = np.interp(t, ta, g)
     return -f_interp * y + g_interp
-"""
-def interpolate_ode(f, g, y):
-    dydt = -f * y + g 
-    return dydt
-
-    """

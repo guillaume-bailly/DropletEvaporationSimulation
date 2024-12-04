@@ -7,7 +7,7 @@ models, and generates plots for droplet properties over time.
 
 from constants import TIME_ARRAY, DO, TF, TA
 from simulation import DropletEvaporationModel
-from plots import plot_velocity, plot_diameter_squared, plot_droplet_temperature
+from plots import plot_velocity, plot_diameter_squared, plot_droplet_temperature, plot_droplet_velocity, plot_droplet_position
 import numpy as np
 
 
@@ -43,8 +43,28 @@ def main():
     droplet_temperature = model.calculate_droplet_temperature(TIME_ARRAY,Bm2,diameter_squared_inf_conductivity)
     plot_droplet_temperature(droplet_temperature)
 
-    # Additional outputs like droplet temperature or axial velocity can be computed here.
-    # Example: Integrating the temperature model.
+    #Compute droplet axial velocity evolution for both models
+    time_d2_law, droplet_velocity_d2_law = model.calculate_droplet_velocity(TIME_ARRAY,diameter_squared_d2_law)
+    time_inf_conductivity, droplet_velocity_inf_conductivity = model.calculate_droplet_velocity(TIME_ARRAY,diameter_squared_inf_conductivity)
+    
+    # Plot the axial velocity evolution for both models
+    plot_droplet_velocity(time_d2_law, droplet_velocity_d2_law,"D² Law")
+    plot_droplet_velocity(time_inf_conductivity, droplet_velocity_inf_conductivity,"Infinite Liquid Conductivity Model")
+
+    #Compute and plot droplet axial position evolution (D² Law)
+    droplet_position_d2_law = model.calculate_droplet_position(time_d2_law, droplet_velocity_d2_law)
+    plot_droplet_position(time_d2_law, droplet_position_d2_law,"D² Law")
+
+    #Compute and plot droplet axial position evolution (Infinite Liquid Conductivity Model)
+    droplet_position_inf_conductivity = model.calculate_droplet_position(time_inf_conductivity, droplet_velocity_inf_conductivity)   
+    plot_droplet_position(time_inf_conductivity, droplet_position_inf_conductivity,"Infinite Liquid Conductivity Model")
+
+    # Minimum length of combustor before droplet evaporation
+    Min_length_d2_law = droplet_position_d2_law[-1]
+    Min_length_inf_conductivity = droplet_position_inf_conductivity[-1]
+
+    print("Minimum length for complete evaporation (D^2 Law): ", round(Min_length_d2_law, 6), " m.")
+    print("Minimum length for complete evaporation (Infinite liquid conductivity model): ", round(Min_length_inf_conductivity, 6), " m.")
 
     # End of simulation
     print("Simulation complete. Plots generated.")

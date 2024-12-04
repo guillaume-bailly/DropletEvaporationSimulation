@@ -27,3 +27,19 @@ def plot_droplet_temperature(droplet_temperature):
     plt.title('Evolution of droplet temperature over time (Infinite liquid conductivity model)')
     plt.axis([0, 0.5, 300, 450])
     plt.show()
+
+def plot_droplet_velocity(time, velocity, title):
+    plt.figure()
+    plt.plot(time, velocity)
+    plt.xlabel('time (s)')
+    plt.ylabel('Up (m/s)')
+    plt.title('Evolution of droplet axial velocity over time - ' + title)
+    plt.show()
+
+def plot_droplet_position(time, position, title):
+    plt.figure()
+    plt.plot(time, position)
+    plt.xlabel('time (s)')
+    plt.ylabel('Xp (m)')
+    plt.title('Evolution of droplet axial position over time - ' + title)
+    plt.show()
