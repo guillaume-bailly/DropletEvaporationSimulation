@@ -8,7 +8,7 @@ This project simulates the evaporation and dynamics of an n-Decane droplet in a 
 ## Features
 
 - **D² Law Model** and **Infinite Liquid Conductivity Model** simulations
-- Plots for droplet diameter, temperature, and axial velocity
+- Plots for droplet diameter, temperature, axial velocity and position
 - Adjustable parameters and configurations for droplet properties and environmental conditions
 
 ## Installation
