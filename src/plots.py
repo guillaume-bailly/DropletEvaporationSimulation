@@ -1,9 +1,17 @@
 # src/plots.py
-
+"""This module defines the functions for plotting and visaulization of the evolution of physical quantities 
+    """
 import matplotlib.pyplot as plt
 
 
 def plot_velocity(time, ug):
+    """Plots the evolution of the volecity of the Gas phase over time
+
+    :param time: time array
+    :type time: array
+    :param ug: Velocity function of the gas phase
+    :type ug: array
+    """
     plt.figure()
     plt.plot(time, ug)
     plt.title("Axial velocity of gas phase")
@@ -13,6 +21,15 @@ def plot_velocity(time, ug):
 
 
 def plot_diameter_squared(time, diameter_squared, title):
+    """Plots the evolution of the squared diameter of the droplet over time
+
+    :param time: time array
+    :type time: array
+    :param diameter_squared: Droplet diameter squared
+    :type diameter_squared: array
+    :param title: Title of the plot (depends on the chosen model)
+    :type title: str
+    """
     plt.figure()
     plt.plot(time, diameter_squared)
     plt.axis([0, 4, 0, 1])
@@ -23,6 +40,11 @@ def plot_diameter_squared(time, diameter_squared, title):
 
 
 def plot_droplet_temperature(droplet_temperature):
+    """Plots the evolution of the droplet temperature over time
+
+    :param droplet_temperature: Droplet temperature
+    :type droplet_temperature: OdeResult
+    """
     plt.figure()
     plt.plot(droplet_temperature.t, droplet_temperature.y[0])
     plt.xlabel("time (s)")
@@ -35,6 +57,15 @@ def plot_droplet_temperature(droplet_temperature):
 
 
 def plot_droplet_velocity(time, velocity, title):
+    """Plots the evolution of the droplet axial velocity over time
+
+    :param time: time array attribute of the computed OdeResult
+    :type time: array
+    :param velocity: velocity array attribute of the computed OdeResult
+    :type velocity: 2D array
+    :param title: Title of the plot (depends on the chosen model)
+    :type title: str
+    """
     plt.figure()
     plt.plot(time, velocity)
     plt.xlabel("time (s)")
@@ -44,6 +75,15 @@ def plot_droplet_velocity(time, velocity, title):
 
 
 def plot_droplet_position(time, position, title):
+    """Plots the evolution of the position of the droplet over time
+
+    :param time: time array of the velocity
+    :type time: array
+    :param position: Axial position of the droplet
+    :type position: numpy.ndarray
+    :param title: Title of the plot (depends on the chosen model)
+    :type title: str
+    """
     plt.figure()
     plt.plot(time, position)
     plt.xlabel("time (s)")
