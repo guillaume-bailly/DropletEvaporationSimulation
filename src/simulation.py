@@ -48,7 +48,6 @@ class DropletEvaporationModel:
         tspan = [0, 4]   #defining time interval
         Up0 = [0]  #initial condition
         Up = solve_ivp(interpolate_ode, tspan, Up0, t_eval=ta[:1000], args=(ta, h1, k1))
-        #print(len(Up.t)," ",len(Up.y[0]))
         time = Up.t[:400]
         velocity = Up.y[0][:400]
         return time, velocity
