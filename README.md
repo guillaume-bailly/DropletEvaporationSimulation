@@ -2,6 +2,8 @@
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Coverage Status](https://coveralls.io/repos/github/guillaume-bailly/DropletEvaporationSimulation/badge.svg?branch=main)](https://coveralls.io/github/guillaume-bailly/DropletEvaporationSimulation?branch=main)
+[![Documentation Status](https://readthedocs.org/projects/dropletevaporationsimulation/badge/?version=latest)](https://<your-project-name>.readthedocs.io/en/latest/)
+
 
 This project simulates the evaporation and dynamics of an n-Decane droplet in a heated airflow, using both the D² Law and Infinite Liquid Conductivity models. It visualizes droplet diameter, temperature, velocity, and axial position over time. It can be used to compute the minimal axial length of a combustion chamber to ensure full envaporation of the droplet.
 
@@ -17,3 +19,9 @@ This project simulates the evaporation and dynamics of an n-Decane droplet in a 
 git clone https://github.com/guillaume-bailly/DropletEvaporationSimulation.git
 cd DropletEvaporationSimulation
 pip install -r requirements.txt
+```
+
+## Documentation
+
+https://dropletevaporationsimulation.readthedocs.io/en/latest/
+
