@@ -5,7 +5,13 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+import os
+import sys
 
+sys.path.insert(0, os.path.abspath("../src"))
+
+
+extensions = ["sphinx.ext.todo", "sphinx.ext.viewcode", "sphinx.ext.autodoc"]
 
 project = "Droplet Evaporation Simulation"
 copyright = "2024, Guillaume Bailly"
