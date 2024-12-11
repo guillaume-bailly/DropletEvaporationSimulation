@@ -1,7 +1,7 @@
 constants module
 ================
 
-.. automodule:: src.constants
+.. automodule:: constants
    :members:
    :undoc-members:
    :show-inheritance:

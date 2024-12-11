@@ -1,5 +1,6 @@
 # src/constants.py
-
+"""This module initialize the constants. For a different fuel, the values can be changed under #Droplet properties.
+    """
 import numpy as np
 
 # Time array for simulation

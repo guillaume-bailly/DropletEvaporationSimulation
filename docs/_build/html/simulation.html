@@ -48,7 +48,18 @@
 <li class="toctree-l2"><a class="reference internal" href="constants.html">constants module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plots.html">plots module</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">simulation module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">simulation module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#simulation.DropletEvaporationModel"><code class="docutils literal notranslate"><span class="pre">DropletEvaporationModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#simulation.DropletEvaporationModel.calculate_diameter_squared"><code class="docutils literal notranslate"><span class="pre">DropletEvaporationModel.calculate_diameter_squared()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#simulation.DropletEvaporationModel.calculate_droplet_position"><code class="docutils literal notranslate"><span class="pre">DropletEvaporationModel.calculate_droplet_position()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#simulation.DropletEvaporationModel.calculate_droplet_temperature"><code class="docutils literal notranslate"><span class="pre">DropletEvaporationModel.calculate_droplet_temperature()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#simulation.DropletEvaporationModel.calculate_droplet_velocity"><code class="docutils literal notranslate"><span class="pre">DropletEvaporationModel.calculate_droplet_velocity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#simulation.DropletEvaporationModel.calculate_mass_transfer_number"><code class="docutils literal notranslate"><span class="pre">DropletEvaporationModel.calculate_mass_transfer_number()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#simulation.DropletEvaporationModel.vapor_pressure"><code class="docutils literal notranslate"><span class="pre">DropletEvaporationModel.vapor_pressure()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="utils.html">utils module</a></li>
 </ul>
 </li>
@@ -79,8 +90,142 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="simulation-module">
-<h1>simulation module<a class="headerlink" href="#simulation-module" title="Link to this heading"></a></h1>
+  <section id="module-simulation">
+<span id="simulation-module"></span><h1>simulation module<a class="headerlink" href="#module-simulation" title="Link to this heading"></a></h1>
+<p>This module defines the class DropletEvaporationModel and all its methods necessary for the computation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">return<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">rtype<span class="colon">:</span></dt>
+<dd class="field-even"><p>DropletEvaporationModel</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="simulation.DropletEvaporationModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">simulation.</span></span><span class="sig-name descname"><span class="pre">DropletEvaporationModel</span></span><a class="reference internal" href="_modules/simulation.html#DropletEvaporationModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulation.DropletEvaporationModel" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="simulation.DropletEvaporationModel.calculate_diameter_squared">
+<span class="sig-name descname"><span class="pre">calculate_diameter_squared</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Bm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'d2_law'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/simulation.html#DropletEvaporationModel.calculate_diameter_squared"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulation.DropletEvaporationModel.calculate_diameter_squared" title="Link to this definition"></a></dt>
+<dd><p>Calculate D² over time using the chosen model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ta</strong> (<em>array</em>) – Time array</p></li>
+<li><p><strong>Bm</strong> (<em>Float</em>) – Spalding mass transfer number</p></li>
+<li><p><strong>model</strong> (<em>str</em><em>, </em><em>optional</em>) – Choice of droplet evaporation model (d2 law or infinite liquid conductivity), defaults to “d2_law”</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Droplet diameter squared</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="simulation.DropletEvaporationModel.calculate_droplet_position">
+<span class="sig-name descname"><span class="pre">calculate_droplet_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/simulation.html#DropletEvaporationModel.calculate_droplet_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulation.DropletEvaporationModel.calculate_droplet_position" title="Link to this definition"></a></dt>
+<dd><p>Calculate droplet velocity over time using the chosen Velocity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time</strong> (<em>array</em>) – Time array of the velocity</p></li>
+<li><p><strong>velocity</strong> (<em>2D array</em>) – Velocity attribute of the Up OdeResult</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Droplet position</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>nupmy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="simulation.DropletEvaporationModel.calculate_droplet_temperature">
+<span class="sig-name descname"><span class="pre">calculate_droplet_temperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Bm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Dsquare</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/simulation.html#DropletEvaporationModel.calculate_droplet_temperature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulation.DropletEvaporationModel.calculate_droplet_temperature" title="Link to this definition"></a></dt>
+<dd><p>Calculate the droplet temperature with values of the Infinite Liquid Conductivity model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ta</strong> (<em>array</em>) – Time array</p></li>
+<li><p><strong>Bm</strong> (<em>Float</em>) – Spalding mass transfer number</p></li>
+<li><p><strong>Dsquare</strong> (<em>array</em>) – Droplet diameter squared</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Droplet temperature</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>OdeResult</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="simulation.DropletEvaporationModel.calculate_droplet_velocity">
+<span class="sig-name descname"><span class="pre">calculate_droplet_velocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Dsquare</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/simulation.html#DropletEvaporationModel.calculate_droplet_velocity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulation.DropletEvaporationModel.calculate_droplet_velocity" title="Link to this definition"></a></dt>
+<dd><p>Calculate droplet velocity over time using the chosen Dsquare.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ta</strong> (<em>array</em>) – Time array</p></li>
+<li><p><strong>Dsquare</strong> (<em>array</em>) – Droplet diameter squared</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Time and Velocity attributes of  Up</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>OdeResult</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="simulation.DropletEvaporationModel.calculate_mass_transfer_number">
+<span class="sig-name descname"><span class="pre">calculate_mass_transfer_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Pvap</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/simulation.html#DropletEvaporationModel.calculate_mass_transfer_number"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulation.DropletEvaporationModel.calculate_mass_transfer_number" title="Link to this definition"></a></dt>
+<dd><p>Compute the Spalding mass transfer number Bm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Pvap</strong> (<em>Float</em>) – Vapor pressure</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Spalding mass transfer number</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="simulation.DropletEvaporationModel.vapor_pressure">
+<span class="sig-name descname"><span class="pre">vapor_pressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'low'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/simulation.html#DropletEvaporationModel.vapor_pressure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulation.DropletEvaporationModel.vapor_pressure" title="Link to this definition"></a></dt>
+<dd><p>Calculate vapor pressure based on temperature and model type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>T</strong> (<em>Float</em>) – Temperature</p></li>
+<li><p><strong>model_type</strong> (<em>str</em><em>, </em><em>optional</em>) – Model type given Temperature (low or high), defaults to “low”</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Vapor pressure</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
 

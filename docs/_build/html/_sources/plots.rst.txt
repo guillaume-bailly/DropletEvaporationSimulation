@@ -1,7 +1,7 @@
 plots module
 ============
 
-.. automodule:: src.plots
+.. automodule:: plots
    :members:
    :undoc-members:
    :show-inheritance:
