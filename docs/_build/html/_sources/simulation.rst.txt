@@ -1,7 +1,7 @@
 simulation module
 =================
 
-.. automodule:: simulation
+.. automodule:: src.simulation
    :members:
    :undoc-members:
    :show-inheritance:
