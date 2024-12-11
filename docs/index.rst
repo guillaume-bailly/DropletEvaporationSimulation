@@ -1,10 +1,10 @@
-.. DropletEvaporationSimulation documentation master file, created by
-   sphinx-quickstart on Wed Dec  4 21:23:56 2024.
+.. Droplet Evaporation Simulation documentation master file, created by
+   sphinx-quickstart on Wed Dec 11 15:36:38 2024.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-DropletEvaporationSimulation documentation
-==========================================
+Droplet Evaporation Simulation documentation
+============================================
 
 Add your content using ``reStructuredText`` syntax. See the
 `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
