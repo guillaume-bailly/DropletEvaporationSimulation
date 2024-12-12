@@ -2,14 +2,19 @@
 Tests for plots.py module
 """
 
-from src.plots import (
+import os
+import sys
+
+sys.path.insert(0, os.path.abspath("../src"))
+
+from plots import (
     plot_velocity,
     plot_diameter_squared,
     plot_droplet_temperature,
     plot_droplet_velocity,
     plot_droplet_position,
 )
-from src.utils import interpolate_ode
+from utils import interpolate_ode
 from scipy.integrate import cumtrapz, solve_ivp
 import numpy as np
 import matplotlib.pyplot as plt
