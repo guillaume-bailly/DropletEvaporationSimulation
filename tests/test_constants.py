@@ -7,7 +7,7 @@ import sys
 
 sys.path.insert(0, os.path.abspath("../src"))
 
-from constants import TIME_ARRAY, DO, TF, TA
+from src.constants import TIME_ARRAY, DO, TF, TA
 
 
 def test_time_array_length():
