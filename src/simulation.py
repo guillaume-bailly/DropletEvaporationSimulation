@@ -6,7 +6,7 @@
     """
 from constants import *
 from utils import interpolate_ode
-from scipy.integrate import cumtrapz, solve_ivp
+from scipy.integrate import cumulative_trapezoid, solve_ivp
 import numpy as np
 
 
@@ -112,5 +112,5 @@ class DropletEvaporationModel:
         :rtype: nupmy.ndarray
         """
         # Solving axial position Xp of droplet
-        Xp = cumtrapz(velocity, time, initial=0)
+        Xp = cumulative_trapezoid(velocity, time, initial=0)
         return Xp
