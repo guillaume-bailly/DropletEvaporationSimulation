@@ -9,7 +9,7 @@ sys.path.insert(0, os.path.abspath("../src"))
 
 import pytest
 import numpy as np
-from src.simulation import DropletEvaporationModel
+from simulation import DropletEvaporationModel
 
 
 @pytest.fixture

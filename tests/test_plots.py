@@ -7,7 +7,7 @@ import sys
 
 sys.path.insert(0, os.path.abspath("../src"))
 
-from src.plots import (
+from plots import (
     plot_velocity,
     plot_diameter_squared,
     plot_droplet_temperature,
