@@ -3,53 +3,50 @@ name: Publish to PyPI
 on:
   push:
     branches:
-      - main  # Triggers on pushes to the main branch
-  workflow_dispatch:  # Allows manual triggering of the workflow
+      - main
+  workflow_dispatch:
 
 jobs:
   publish:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Set up Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.11" 
+          python-version: "3.11"
 
-      # Install dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install setuptools wheel twine bump2version
 
-      # Bump the version
+      # Configure Git for committing changes
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Bump version
-        id: bump_version  # Save the output of this step for later steps
         env:
-          BUMP_PART: patch  # Change to major, minor, or patch as needed
+          BUMP_PART: patch
         run: |
           bump2version $BUMP_PART
-        # bump2version automatically commits and tags the new version
 
-      # Build the package
       - name: Build the package
         run: |
           python setup.py sdist bdist_wheel
 
-      # Publish to PyPI
       - name: Publish to PyPI
         env:
-          TWINE_USERNAME: __token__  # Required by Twine for authentication
-          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}  
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
         run: |
           twine upload dist/*
 
-      # Push changes back to the repository
       - name: Push changes
         run: |
           git config user.name "github-actions[bot]"
