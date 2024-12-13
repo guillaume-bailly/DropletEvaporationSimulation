@@ -56,3 +56,8 @@ jobs:
           git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Cleanup unnecessary files
+        run: |
+          rm -rf dropletevaporationsimulation.egg-info build dist          
+          
