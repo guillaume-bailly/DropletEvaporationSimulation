@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: dropletevaporationsimulation
-Version: 1.1.5
+Version: 1.1.6
 Summary: This project simulates the evaporation and dynamics of an n-Decane droplet in a heated airflow.
 Home-page: https://github.com/guillaume-bailly/DropletEvaporationSimulation
 Author: Guillaume Bailly
@@ -39,6 +39,11 @@ Droplet properties can be modified in src/constants.py to simulate the vaporizat
 git clone https://github.com/guillaume-bailly/DropletEvaporationSimulation.git
 cd DropletEvaporationSimulation
 pip install -r requirements.txt
+```
+or 
+
+```bash
+pip install dropletevaporationsimulation
 ```
 
 ## Documentation
