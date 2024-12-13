@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="dropletdvaporationsimulation",
+    name="dropletevaporationsimulation",
     version="1.1.2",
     author="Guillaume Bailly",
     author_email="guillaume.bailly@estaca.eu",
