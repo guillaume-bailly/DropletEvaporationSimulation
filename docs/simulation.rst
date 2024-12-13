@@ -1,4 +1,4 @@
-Simulation module
+simulation module
 =================
 
 .. automodule:: simulation
