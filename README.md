@@ -27,6 +27,11 @@ git clone https://github.com/guillaume-bailly/DropletEvaporationSimulation.git
 cd DropletEvaporationSimulation
 pip install -r requirements.txt
 ```
+or 
+
+```bash
+pip install dropletevaporationsimulation
+```
 
 ## Documentation
 
