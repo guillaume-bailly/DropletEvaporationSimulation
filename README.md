@@ -47,3 +47,6 @@ pip install --upgrade dropletevaporationsimulation
 ```
 
 ## Run the simulation
+```bash
+des_run_simulation
+```
