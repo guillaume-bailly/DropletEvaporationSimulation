@@ -1,5 +1,5 @@
 # src/plots.py
-"""This module defines the functions for plotting and visaulization of the evolution of physical quantities 
+"""This module defines the functions for plotting of the evolution of physical quantities 
     """
 import matplotlib.pyplot as plt
 

@@ -1,10 +1,13 @@
 # Droplet Evaporation Simulation
 
+![PyPI](https://img.shields.io/pypi/v/dropletevaporationsimulation)
+[![Documentation Status](https://readthedocs.org/projects/dropletevaporationsimulation/badge/?version=latest)](https://dropletevaporationsimulation.readthedocs.io/en/latest/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Coverage Status](https://coveralls.io/repos/github/guillaume-bailly/DropletEvaporationSimulation/badge.svg?branch=main)](https://coveralls.io/github/guillaume-bailly/DropletEvaporationSimulation?branch=main)
-[![Documentation Status](https://readthedocs.org/projects/dropletevaporationsimulation/badge/?version=latest)](https://dropletevaporationsimulation.readthedocs.io/en/latest/)
 ![Test Status](https://github.com/guillaume-bailly/DropletEvaporationSimulation/actions/workflows/tests.yml/badge.svg)
-![PyPI](https://img.shields.io/pypi/v/dropletevaporationsimulation)
+![pylint](https://img.shields.io/badge/pylint-9.5%2F10-brightgreen)
+
+
 
 
 
@@ -20,6 +23,10 @@ Droplet properties can be modified in src/constants.py to simulate the vaporizat
 - Plots for droplet diameter, temperature, axial velocity and position
 - Adjustable parameters and configurations for droplet properties and environmental conditions
 
+## Documentation
+
+https://dropletevaporationsimulation.readthedocs.io/en/latest/
+
 ## Installation
 
 ```bash
@@ -33,7 +40,4 @@ or
 pip install dropletevaporationsimulation
 ```
 
-## Documentation
-
-https://dropletevaporationsimulation.readthedocs.io/en/latest/
-
+## Run the simulation

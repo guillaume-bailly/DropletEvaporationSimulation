@@ -7,6 +7,11 @@ import sys
 
 sys.path.insert(0, os.path.abspath("../src"))
 
+from utils import interpolate_ode
+from scipy.integrate import cumulative_trapezoid, solve_ivp
+import numpy as np
+import matplotlib.pyplot as plt
+
 from plots import (
     plot_velocity,
     plot_diameter_squared,
@@ -14,10 +19,6 @@ from plots import (
     plot_droplet_velocity,
     plot_droplet_position,
 )
-from utils import interpolate_ode
-from scipy.integrate import cumulative_trapezoid, solve_ivp
-import numpy as np
-import matplotlib.pyplot as plt
 
 
 def test_plot_velocity():

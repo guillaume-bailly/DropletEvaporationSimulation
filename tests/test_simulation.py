@@ -56,23 +56,6 @@ def test_calculate_droplet_temperature(setup_model):
     ), "Temperature values should be non-negative"
 
 
-"""
-def test_calculate_droplet_velocity(setup_model):
-    #Test droplet velocity calculation.
-    model = setup_model
-    ta = np.linspace(0, 4, 100)
-    Dsquare = np.full_like(ta, 1e-6)  # Constant droplet diameter squared
-    # Dsquare = np.linspace(1e-10, 1, 100)  # Avoid division by zero
-    time, velocity = model.calculate_droplet_velocity(ta, Dsquare)
-
-    assert time is not None, "Time values for velocity calculation should not be None"
-    assert velocity is not None, "Velocity values should not be None"
-    assert len(time) == len(
-        velocity
-    ), "Time and velocity arrays should have the same length"
-"""
-
-
 def test_calculate_droplet_position(setup_model):
     """Test droplet position calculation."""
     model = setup_model
