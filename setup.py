@@ -18,7 +18,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "des_run_simulation = src.main:main",
+            "des_run_simulation = main:main",
         ],
     },
     classifiers=[
