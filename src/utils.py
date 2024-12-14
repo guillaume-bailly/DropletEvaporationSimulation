@@ -3,7 +3,6 @@
 
     """
 import numpy as np
-from scipy.integrate import solve_ivp
 
 
 def interpolate_ode(t, y, ta, f, g):

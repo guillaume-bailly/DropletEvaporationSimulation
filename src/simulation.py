@@ -1,13 +1,11 @@
 # src/simulation.py
-"""This module defines the class DropletEvaporationModel and all its methods necessary for the computation.
-
-    :return: _description_
-    :rtype: DropletEvaporationModel
+"""This module defines the class DropletEvaporationModel and all its methods.
     """
-import constants
-from utils import interpolate_ode
 from scipy.integrate import cumulative_trapezoid, solve_ivp
 import numpy as np
+
+import constants
+from utils import interpolate_ode
 
 
 class DropletEvaporationModel:
@@ -51,7 +49,7 @@ class DropletEvaporationModel:
         :type ta: array
         :param Bm: Spalding mass transfer number
         :type Bm: Float
-        :param model: Choice of droplet evaporation model (d2 law or infinite liquid conductivity), defaults to "d2_law"
+        :param model: Choice of droplet evaporation model, defaults to "d2_law"
         :type model: str, optional
         :return: Droplet diameter squared
         :rtype: array

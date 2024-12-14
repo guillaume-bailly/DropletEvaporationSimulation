@@ -5,7 +5,7 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Coverage Status](https://coveralls.io/repos/github/guillaume-bailly/DropletEvaporationSimulation/badge.svg?branch=main)](https://coveralls.io/github/guillaume-bailly/DropletEvaporationSimulation?branch=main)
 ![Test Status](https://github.com/guillaume-bailly/DropletEvaporationSimulation/actions/workflows/tests.yml/badge.svg)
-![pylint](https://img.shields.io/badge/pylint-9.5%2F10-brightgreen)
+![pylint](https://img.shields.io/badge/pylint-6.48%2F10-brightgreen)
 
 
 
