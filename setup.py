@@ -9,12 +9,18 @@ setup(
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/guillaume-bailly/DropletEvaporationSimulation",
-    packages=find_packages(),
+    packages=find_packages(where="src"),
+    package_dir={"": "src"},
     install_requires=[
         "numpy>=1.21.0",
         "matplotlib>=3.4.0",
         "scipy>=1.7.0",
     ],
+    entry_points={
+        "console_scripts": [
+            "des_run_simulation = dropletevaporationsimulation.main:main",
+        ],
+    },
     classifiers=[
         "Programming Language :: Python :: 3",
         # "License :: OSI Approved :: MIT License",
