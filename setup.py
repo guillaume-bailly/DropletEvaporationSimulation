@@ -9,8 +9,7 @@ setup(
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/guillaume-bailly/DropletEvaporationSimulation",
-    packages=find_packages(where="src"),
-    package_dir={"": "src"},
+    packages=find_packages(),
     install_requires=[
         "numpy>=1.21.0",
         "matplotlib>=3.4.0",
@@ -18,7 +17,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "des_run_simulation = src.main:main",
+            "des_run_simulation = main:main",
         ],
     },
     classifiers=[
