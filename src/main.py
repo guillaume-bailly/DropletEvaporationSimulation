@@ -19,11 +19,10 @@ from .plots import (
 def main():
     """Main function, runs the simulation and plots the results."""
 
-    print("Simulation started!\n")
+    print("\nSimulation started!\n")
 
     # Update the constants or keep the default values (n-Decane and air)
     constants.update_constants()
-    print(f"Updated DO: {constants.DO}")
 
     # Initialize the evaporation model
     model = DropletEvaporationModel()
@@ -107,7 +106,7 @@ def main():
     Min_length_inf_conductivity = droplet_position_inf_conductivity[-1]
 
     print(
-        "Minimum length for complete evaporation (D^2 Law): ",
+        "\nMinimum length for complete evaporation (D^2 Law): ",
         round(Min_length_d2_law, 6),
         " m.",
     )
@@ -118,7 +117,7 @@ def main():
     )
 
     # End of simulation
-    print("Simulation complete. Plots generated.")
+    print("\nSimulation complete. Plots generated.")
 
 
 if __name__ == "__main__":
