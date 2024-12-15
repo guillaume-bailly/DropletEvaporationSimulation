@@ -17,7 +17,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "des_run_simulation = dropletevaporationsimulation.src.main:main",
+            "des_run_simulation = main:main",
         ],
     },
     classifiers=[
