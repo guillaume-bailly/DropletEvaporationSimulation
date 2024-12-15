@@ -49,7 +49,7 @@ jobs:
 
       - name: Cleanup unnecessary files
         run: |
-          rm -rf dropletevaporationsimulation.egg-info build dist
+          rm -rf dropletevaporationsimulation.egg-info build 
 
       - name: Push changes
         run: |
