@@ -19,7 +19,7 @@ from .plots import (
 def main():
     """Main function, runs the simulation and plots the results."""
 
-    print("\nSimulation started!\n")
+    print("\nSimulation has started!\n")
 
     # Update the constants or keep the default values (n-Decane and air)
     constants.update_constants()
