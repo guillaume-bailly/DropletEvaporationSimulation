@@ -1,21 +1,21 @@
-
-
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="./">
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>plots module &mdash; Droplet Evaporation Simulation 1.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
-
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-      <script src="_static/jquery.js?v=5d32c60e"></script>
-      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=8d563738"></script>
-      <script src="_static/doctools.js?v=9bcbadda"></script>
-      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=8d563738"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -47,7 +47,14 @@
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="constants.html">constants module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">plots module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">plots module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#plots.plot_diameter_squared"><code class="docutils literal notranslate"><span class="pre">plot_diameter_squared()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#plots.plot_droplet_position"><code class="docutils literal notranslate"><span class="pre">plot_droplet_position()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#plots.plot_droplet_temperature"><code class="docutils literal notranslate"><span class="pre">plot_droplet_temperature()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#plots.plot_droplet_velocity"><code class="docutils literal notranslate"><span class="pre">plot_droplet_velocity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#plots.plot_velocity"><code class="docutils literal notranslate"><span class="pre">plot_velocity()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="simulation.html">simulation module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utils.html">utils module</a></li>
 </ul>
@@ -79,8 +86,79 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="plots-module">
-<h1>plots module<a class="headerlink" href="#plots-module" title="Link to this heading"></a></h1>
+  <section id="module-plots">
+<span id="plots-module"></span><h1>plots module<a class="headerlink" href="#module-plots" title="Link to this heading"></a></h1>
+<p>This module defines the functions for plotting of the evolution of physical quantities</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="plots.plot_diameter_squared">
+<span class="sig-prename descclassname"><span class="pre">plots.</span></span><span class="sig-name descname"><span class="pre">plot_diameter_squared</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">diameter_squared</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/plots.html#plot_diameter_squared"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#plots.plot_diameter_squared" title="Link to this definition"></a></dt>
+<dd><p>Plots the evolution of the squared diameter of the droplet over time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time</strong> (<em>array</em>) – time array</p></li>
+<li><p><strong>diameter_squared</strong> (<em>array</em>) – Droplet diameter squared</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – Title of the plot (depends on the chosen model)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="plots.plot_droplet_position">
+<span class="sig-prename descclassname"><span class="pre">plots.</span></span><span class="sig-name descname"><span class="pre">plot_droplet_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/plots.html#plot_droplet_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#plots.plot_droplet_position" title="Link to this definition"></a></dt>
+<dd><p>Plots the evolution of the position of the droplet over time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time</strong> (<em>array</em>) – time array of the velocity</p></li>
+<li><p><strong>position</strong> (<em>numpy.ndarray</em>) – Axial position of the droplet</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – Title of the plot (depends on the chosen model)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="plots.plot_droplet_temperature">
+<span class="sig-prename descclassname"><span class="pre">plots.</span></span><span class="sig-name descname"><span class="pre">plot_droplet_temperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">droplet_temperature</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/plots.html#plot_droplet_temperature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#plots.plot_droplet_temperature" title="Link to this definition"></a></dt>
+<dd><p>Plots the evolution of the droplet temperature over time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>droplet_temperature</strong> (<em>OdeResult</em>) – Droplet temperature</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="plots.plot_droplet_velocity">
+<span class="sig-prename descclassname"><span class="pre">plots.</span></span><span class="sig-name descname"><span class="pre">plot_droplet_velocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/plots.html#plot_droplet_velocity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#plots.plot_droplet_velocity" title="Link to this definition"></a></dt>
+<dd><p>Plots the evolution of the droplet axial velocity over time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time</strong> (<em>array</em>) – time array attribute of the computed OdeResult</p></li>
+<li><p><strong>velocity</strong> (<em>2D array</em>) – velocity array attribute of the computed OdeResult</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – Title of the plot (depends on the chosen model)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="plots.plot_velocity">
+<span class="sig-prename descclassname"><span class="pre">plots.</span></span><span class="sig-name descname"><span class="pre">plot_velocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ug</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/plots.html#plot_velocity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#plots.plot_velocity" title="Link to this definition"></a></dt>
+<dd><p>Plots the evolution of the volecity of the Gas phase over time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time</strong> (<em>array</em>) – time array</p></li>
+<li><p><strong>ug</strong> (<em>array</em>) – Velocity function of the gas phase</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 
