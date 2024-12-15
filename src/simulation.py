@@ -4,8 +4,8 @@
 from scipy.integrate import cumulative_trapezoid, solve_ivp
 import numpy as np
 
-import constants
-from utils import interpolate_ode
+from . import constants
+from .utils import interpolate_ode
 
 
 class DropletEvaporationModel:
