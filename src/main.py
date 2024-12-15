@@ -5,9 +5,9 @@ This script initializes the simulation parameters, computes the evaporation
 models, and generates plots for droplet properties over time.
 """
 
-import constants
-from simulation import DropletEvaporationModel
-from plots import (
+from . import constants
+from .simulation import DropletEvaporationModel
+from .plots import (
     plot_velocity,
     plot_diameter_squared,
     plot_droplet_temperature,
