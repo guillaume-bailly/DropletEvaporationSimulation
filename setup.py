@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="dropletevaporationsimulation",
-    version="1.1.26",
+    version="1.1.27",
     author="Guillaume Bailly",
     author_email="guillaume.bailly@estaca.eu",
     description="This project simulates the evaporation and dynamics of an n-Decane droplet in a heated airflow.",
