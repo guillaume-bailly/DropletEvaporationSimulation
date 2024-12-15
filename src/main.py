@@ -5,7 +5,7 @@ This script initializes the simulation parameters, computes the evaporation
 models, and generates plots for droplet properties over time.
 """
 
-import constants
+from . import constants
 from simulation import DropletEvaporationModel
 from plots import (
     plot_velocity,
@@ -18,6 +18,9 @@ from plots import (
 
 def main():
     """Main function, runs the simulation and plots the results."""
+
+    print("Simulation started!\n")
+
     # Update the constants or keep the default values (n-Decane and air)
     constants.update_constants()
     print(f"Updated DO: {constants.DO}")
